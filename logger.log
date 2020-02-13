@@ -1,0 +1,512 @@
+INFO:2020-01-09 20:07:59,616:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:07:59] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:07:59,618:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:07:59,627:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:07:59,644:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:07:59,724:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:07:59,730:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:07:59,895:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:07:59,895:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:07:59,896:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:07:59,900:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52608), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:07:59,900:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF6264E0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF6264E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:07:59,912:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF6264E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:07:59,912:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF6264E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:07:59,912:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF6264E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:07:59,913:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:08:00,015:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:00,027:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:08:00,190:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:08:00,190:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:08:00,214:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:08:00,219:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=968, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52611), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:08:00,221:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF626CC0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF626CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:08:00,240:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF626CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:00,241:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF626CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:00,241:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF626CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:00,241:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:08:00,343:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:00,356:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:08:00,509:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:08:00,510:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:08:00,513:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:08:00,529:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1256, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52614), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:08:00,530:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF651550>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF651550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:08:00,544:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF651550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:00,544:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF651550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:00,544:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001B6EF651550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:00,545:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:08:00,644:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:00,645:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:08:27,850:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:08:32,518:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:08:32] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:08:32,517:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:08:32,523:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:08:32,533:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:08:32,614:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:32,626:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:08:32,778:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:08:32,778:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:08:32,781:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:08:32,786:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1036, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52624), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:08:32,787:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62160>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62160> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:08:32,803:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62160> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:32,803:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62160> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:32,803:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62160> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:32,804:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:08:32,905:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:32,924:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:08:33,077:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:08:33,077:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:08:33,079:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:08:33,083:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=992, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52627), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:08:33,085:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62BE0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:08:33,106:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:33,106:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:33,107:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C62BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:33,107:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:08:33,203:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:33,209:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:08:33,360:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:08:33,360:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:08:33,362:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:08:33,371:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1008, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52630), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:08:33,372:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C92240>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C92240> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:08:33,386:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C92240> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:33,386:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C92240> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:33,387:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000174E7C92240> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:08:33,388:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:08:33,482:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:08:33,483:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:09:24,912:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:09:27,825:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:09:27] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:09:27,825:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:09:27,835:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:09:27,863:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:09:27,948:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:27,958:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:09:28,119:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:09:28,119:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:09:28,121:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:09:28,125:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1160, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52640), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:09:28,126:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D365554E0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D365554E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:09:28,141:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D365554E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,141:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D365554E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,141:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D365554E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,141:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:09:28,242:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:28,257:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:09:28,417:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:09:28,418:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:09:28,420:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:09:28,425:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1108, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52643), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:09:28,426:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36555710>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36555710> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:09:28,438:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36555710> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,438:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36555710> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,439:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36555710> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,439:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:09:28,540:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:28,549:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:09:28,710:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:09:28,711:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:09:28,712:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:09:28,716:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1116, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52646), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:09:28,717:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36581518>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36581518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:09:28,736:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36581518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,736:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36581518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,736:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000019D36581518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:28,737:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:09:28,831:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:28,831:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:09:46,383:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:09:49,347:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:09:49,348:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:09:49,349:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:09:49] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:09:49,358:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:09:49,441:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:49,449:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:09:49,603:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:09:49,603:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:09:49,606:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:09:49,611:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52656), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:09:49,612:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047438>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:09:49,630:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:49,630:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:49,631:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:49,631:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:09:49,727:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:49,735:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:09:49,884:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:09:49,884:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:09:49,886:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:09:49,889:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=836, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52659), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:09:49,890:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047908>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047908> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:09:49,903:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047908> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:49,903:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047908> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:49,903:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA047908> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:49,903:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:09:49,996:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:50,002:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:09:50,157:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:09:50,157:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:09:50,159:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:09:50,163:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1396, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52662), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:09:50,163:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA0714A8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA0714A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:09:50,179:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA0714A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:50,179:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA0714A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:50,179:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F4EA0714A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:09:50,179:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:09:50,269:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:09:50,270:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:10:24,025:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:10:26,749:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:10:26] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:10:26,750:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:10:26,762:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:10:26,778:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:10:26,861:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:26,872:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:10:27,028:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:10:27,028:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:10:27,033:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:10:27,037:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1420, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52673), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:10:27,039:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249366438>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249366438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:10:27,055:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249366438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,056:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249366438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,056:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249366438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,057:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:10:27,155:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:27,164:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:10:27,317:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:10:27,317:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:10:27,320:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:10:27,324:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1408, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52676), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:10:27,325:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D2493668D0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D2493668D0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:10:27,338:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D2493668D0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,338:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D2493668D0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,338:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D2493668D0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,339:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:10:27,431:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:27,441:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:10:27,596:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:10:27,596:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:10:27,599:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:10:27,602:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1180, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52679), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:10:27,603:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249392438>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249392438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:10:27,619:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249392438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,620:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249392438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,620:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D249392438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:27,621:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:10:27,740:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:27,741:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:10:43,664:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:10:50,309:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:10:50,311:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:10:50,317:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:10:50] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:10:50,325:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:10:50,411:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:50,423:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:10:50,589:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:10:50,589:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:10:50,595:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:10:50,602:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1292, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52689), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:10:50,605:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7400> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:10:50,622:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7400> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:50,622:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7400> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:50,623:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7400> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:50,625:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:10:50,733:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:50,748:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:10:50,913:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:10:50,913:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:10:50,916:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:10:50,923:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1052, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52692), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:10:50,924:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7BE0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:10:50,938:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:50,939:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:50,939:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD983E7BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:50,940:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:10:51,039:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:51,048:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:10:51,208:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:10:51,208:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:10:51,210:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:10:51,213:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1004, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52695), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:10:51,214:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD98411470>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD98411470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:10:51,232:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD98411470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:51,232:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD98411470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:51,232:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001AD98411470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:10:51,232:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:10:51,342:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:10:51,343:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:11:14,145:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:11:17,507:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:11:17] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:11:17,508:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:11:17,512:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:11:17,528:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:11:17,610:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:11:17,619:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:11:17,772:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:11:17,773:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:11:17,776:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:11:17,780:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=716, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52715), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:11:17,781:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD34E0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD34E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:11:17,798:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD34E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:17,799:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD34E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:17,799:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD34E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:17,800:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:11:17,907:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:11:17,923:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:11:18,075:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:11:18,075:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:11:18,077:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:11:18,081:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=956, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52718), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:11:18,082:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD39E8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD39E8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:11:18,096:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD39E8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:18,096:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD39E8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:18,096:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7CD39E8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:18,097:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:11:18,191:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:11:18,204:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:11:18,359:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:11:18,359:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:11:18,361:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:11:18,365:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=964, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52721), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:11:18,366:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7D01550>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7D01550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:11:18,381:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7D01550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:18,381:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7D01550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:18,381:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000263F7D01550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:11:18,382:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:11:18,482:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:11:18,483:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:17:48,784:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:17:52,229:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:17:52,229:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:17:52] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:17:52,231:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:17:52,248:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:17:52,336:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:17:52,346:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:17:52,511:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:17:52,511:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:17:52,512:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:17:52,516:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1184, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52755), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:17:52,516:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B6664A8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B6664A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:17:52,529:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B6664A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:52,529:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B6664A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:52,529:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B6664A8> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:52,530:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:17:52,628:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:17:52,644:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:17:52,802:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:17:52,802:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:17:52,805:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:17:52,821:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1204, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52758), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:17:52,823:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B666C88>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B666C88> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:17:52,839:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B666C88> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:52,841:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B666C88> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:52,841:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B666C88> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:52,842:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:17:52,939:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:17:52,947:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:17:53,105:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:17:53,105:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:17:53,107:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:17:53,112:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52761), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:17:53,113:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B691518>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B691518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:17:53,126:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B691518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:53,126:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B691518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:53,126:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002BE3B691518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:17:53,126:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:17:53,221:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:17:53,222:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:19:09,432:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:19:12,108:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:19:12] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:19:12,108:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:19:12,112:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:19:12,126:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:19:12,219:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:12,230:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:19:12,383:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:19:12,383:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:19:12,387:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:19:12,391:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1192, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52779), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:19:12,392:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5518>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:19:12,406:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,406:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,407:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5518> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,408:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:19:12,506:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:12,520:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:19:12,674:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:19:12,674:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:19:12,676:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:19:12,680:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1476, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52782), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:19:12,681:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5B00>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5B00> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:19:12,709:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5B00> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,709:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5B00> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,710:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000277939E5B00> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,710:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:19:12,806:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:12,813:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:19:12,967:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:19:12,967:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:19:12,969:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:19:12,972:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=864, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52785), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:19:12,973:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027793A12550>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027793A12550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:19:12,984:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027793A12550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,984:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027793A12550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,985:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027793A12550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:12,985:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:19:13,086:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:13,087:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 20:19:43,774:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 20:19:46,884:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 20:19:46,885:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 20:19:46] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 20:19:46,888:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 20:19:46,909:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 20:19:46,989:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:46,997:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 20:19:47,151:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:19:47,151:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:19:47,154:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:19:47,160:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52801), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:19:47,161:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1550>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:19:47,175:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,176:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,176:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,176:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:19:47,269:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:47,281:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 20:19:47,435:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:19:47,435:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:19:47,437:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:19:47,440:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=632, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52804), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:19:47,441:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1B38>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1B38> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:19:47,457:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1B38> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,457:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1B38> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,457:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4A1B38> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,458:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:19:47,555:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:47,562:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 20:19:47,718:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 20:19:47,719:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 20:19:47,720:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 20:19:47,723:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1228, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 52807), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 20:19:47,724:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4D1588>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4D1588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 20:19:47,736:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4D1588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,736:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4D1588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,736:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002539B4D1588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 20:19:47,737:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 20:19:47,829:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 20:19:47,830:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 21:00:09,931:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 21:00:35,511:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 21:00:35,512:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 21:00:35] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 21:00:35,514:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 21:00:35,525:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 21:00:35,617:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:00:35,623:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 21:00:35,793:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:00:35,794:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:00:35,797:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:00:35,802:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 54668), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:00:35,804:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E74E0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E74E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:00:35,823:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E74E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:35,824:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E74E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:35,824:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E74E0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:35,824:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:00:35,935:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:00:35,956:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 21:00:36,109:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:00:36,109:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:00:36,111:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:00:36,114:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1032, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 54671), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:00:36,114:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E7CC0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E7CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:00:36,128:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E7CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:36,128:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E7CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:36,129:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C5E7CC0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:36,129:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:00:36,221:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:00:36,229:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 21:00:36,384:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:00:36,385:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:00:36,387:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:00:36,391:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1264, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 54674), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:00:36,392:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C613550>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C613550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:00:36,406:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C613550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:36,407:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C613550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:36,407:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028D2C613550> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:00:36,408:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:00:36,509:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:00:36,511:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 21:09:46,562:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 21:09:53,533:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 21:09:53] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 21:09:53,534:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 21:09:53,536:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 21:09:53,549:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 21:09:53,641:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:09:53,655:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 21:09:53,810:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:09:53,810:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:09:53,812:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:09:53,820:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 55066), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:09:53,821:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5438>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:09:53,835:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:53,835:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:53,835:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5438> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:53,835:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:09:53,929:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:09:53,934:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-09 21:09:54,090:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:09:54,090:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:09:54,092:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:09:54,096:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1296, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 55069), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:09:54,096:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5BE0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:09:54,108:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:54,108:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:54,108:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000208971E5BE0> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:54,109:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:09:54,200:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:09:54,210:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-09 21:09:54,363:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:09:54,363:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:09:54,365:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:09:54,369:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 55073), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:09:54,370:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020897212470>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020897212470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:09:54,384:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020897212470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:54,384:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020897212470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:54,384:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020897212470> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:09:54,385:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:09:54,479:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:09:54,480:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-01-09 21:24:05,144:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-09 21:24:10,562:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-09 21:24:10,566:_internal.py:_log:127.0.0.1 - - [09/Jan/2020 21:24:10] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-09 21:24:10,564:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-09 21:24:10,597:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-09 21:24:10,728:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-09 21:24:10,741:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-09 21:24:10,894:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-09 21:24:10,895:flow_self.py:call_resource:request result:  !!!!!!!!!!
+INFO:2020-01-09 21:24:10,899:connection_workflow.py:start:Pika version 1.1.0 connecting to ('10.141.221.88', 5672)
+INFO:2020-01-09 21:24:10,904:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1212, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.222.203.117', 55658), raddr=('10.141.221.88', 5672)>
+INFO:2020-01-09 21:24:10,906:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000249F3393588>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000249F3393588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-01-09 21:24:10,924:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000249F3393588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:24:10,924:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000249F3393588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:24:10,925:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000249F3393588> params=<ConnectionParameters host=10.141.221.88 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-01-09 21:24:10,926:blocking_connection.py:__init__:Created channel=1
+INFO:2020-01-09 21:24:10,956:flow_self.py:receive_from_monitor:[*]
+Waiting for msg, routing_key: 5e17297a9b57e70bd039a88dINFO:2020-01-10 10:52:19,259:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-01-10 10:52:35,406:flow_runner.py:run:Beginning Flow run for 'Run a Prefect Flow in Docker'
+INFO:2020-01-10 10:52:35,407:flow_runner.py:set_flow_to_running:Starting flow run.
+INFO:2020-01-10 10:52:35,409:_internal.py:_log:127.0.0.1 - - [10/Jan/2020 10:52:35] "POST /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-01-10 10:52:35,417:task_runner.py:run:Task 'StartNoneEvent': Starting task run...
+INFO:2020-01-10 10:52:35,497:task_runner.py:run:Task 'StartNoneEvent': finished task run for task with final state: 'Success'
+INFO:2020-01-10 10:52:35,507:task_runner.py:run:Task '�㿧�ȷ���': Starting task run...
+INFO:2020-01-10 10:52:35,656:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-10 10:52:35,781:task_runner.py:run:Task '�㿧�ȷ���': finished task run for task with final state: 'Success'
+INFO:2020-01-10 10:52:35,795:task_runner.py:run:Task '��������': Starting task run...
+INFO:2020-01-10 10:52:35,948:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-10 10:52:36,050:task_runner.py:run:Task '��������': finished task run for task with final state: 'Success'
+INFO:2020-01-10 10:52:36,059:task_runner.py:run:Task '�Ϳ���': Starting task run...
+INFO:2020-01-10 10:52:36,210:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
+INFO:2020-01-10 10:52:36,332:task_runner.py:run:Task '�Ϳ���': finished task run for task with final state: 'Success'
+INFO:2020-01-10 10:52:36,333:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
