@@ -136,8 +136,8 @@ def create_service_main(deployment_name, service_name):
     # access the service on kubernetes nodes via cluster-ip : http://clusterIP:8888/
 
     # Delete created service and deployment
-    delete_service(client.CoreV1Api(), service_name)
-    delete_deployment(client.AppsV1Api(), deployment_name)
+    # delete_service(client.CoreV1Api(), service_name)
+    # delete_deployment(client.AppsV1Api(), deployment_name)
     return clusterIP
 
 

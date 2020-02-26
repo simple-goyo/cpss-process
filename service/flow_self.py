@@ -334,23 +334,24 @@ class CommonFlow:
                 # deployment_and_service_name = deployment_and_service_name.lower()
                 deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
                 deployment_and_service_name = "s" + deployment_and_service_name + "s"
-                print(deployment_and_service_name)
                 clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
+                update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
                 params = {'workflow_instance_id': str(self.instance_id),
                           'task_type': 'StartNoneEvent',
                           'task_id': pre_task.task_id,
                           'next_workflow_proxy': next_workflow_proxy}
-                print(params)
+                print("------params0-------" + str(params))
                 init_address = "http://" + clusterIP + ":8888/init"
-                print(init_address)
-                reponse = requests.post(init_address, params)
+                print("------init_address-------" + init_address)
+                headers = {}
+                files = []
+                reponse = requests.request("POST", init_address, headers=headers, data=params, files=files)
                 print("------reponse-------" + reponse)
             else:
                 deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
                 deployment_and_service_name = "s" + deployment_and_service_name + "s"
-                print(deployment_and_service_name)
                 clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
-                print("-------------" + str(clusterIP) + "------------")
+                update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
                 params = {'workflow_instance_id': str(self.instance_id),
                           'task_type': pre_task.task_type,
                           'task_id': pre_task.task_id,
@@ -358,11 +359,23 @@ class CommonFlow:
                           'service_input': pre_task.task_input,
                           'service_name': pre_task.task_name,
                           'next_workflow_proxy': next_workflow_proxy}
-                print(params)
+                print("------params1-------" + str(params))
                 init_address = "http://" + clusterIP + ":8888/init"
-                print(init_address)
-                reponse = requests.post(init_address, params)
-                print("------reponse-------" + reponse)
+                print("------init_address-------" + init_address)
+                body = {'user_id': 'user_id',
+                        'workflow_instance_id': 'workflow_instance_id',
+                        'workflow_proxy_type': 'workflow_proxy_type',
+                        'task_id': 'task_id',
+                        'executor_resource_id': 'executor_resource_id',
+                        'service_name': 'service_name',
+                        'service_input': 'service_input',
+                        'next_task_ids': 'next_task_ids'}
+                # body = {"payload": "{\"action\":\"start\",\"mode\":\"0\",\"level\":\"0\",\"num\":\"0\"}",
+                #         "topic": "lab/lab401_coffee1/switch"}
+                headers = {"Content-Type": "application/x-www-form-urlencoded"}
+                response = requests.post(init_address, data=body, headers=headers)
+                print("response Code: " + str(response.status_code))
+                print("response content: " + response.text)
 
     def get_child_shape_by_id(self, target_id):
         for child_shape in self.app_class_child_shapes:

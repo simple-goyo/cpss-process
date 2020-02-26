@@ -94,9 +94,16 @@ def insert_app_instance_resource_param(t_app_instance, app_instance_id, resource
     newvalues = {"$set": {"resource_param." + resource_instance_id: param}}
     t_app_instance.update_one(myquery, newvalues)
 
+
 def update_app_instance_action_state(t_app_instance, app_instance_id, action_id, action_state):
     myquery = {"_id": ObjectId(app_instance_id)}
     newvalues = {"$set": {"action_state." + action_id: action_state}}
+    t_app_instance.update_one(myquery, newvalues)
+
+
+def update_app_instance_action_ip(t_app_instance, app_instance_id, action_id, action_ip):
+    myquery = {"_id": ObjectId(app_instance_id)}
+    newvalues = {"$set": {"action_ip." + action_id: action_ip}}
     t_app_instance.update_one(myquery, newvalues)
 
 
