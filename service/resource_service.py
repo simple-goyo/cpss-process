@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import requests
 from bson.json_util import loads, dumps
 import json
+
 
 # 课题四接口服务
 def get_all_resource_instance_id(name, x, y):
@@ -73,7 +75,7 @@ def get_resource_instance_id_self(user_id, app_instance_id, resource_id):
     }
     resource_instance_map = {
         "工人": "crowdsourcing-service",
-        "咖啡机": "coffeemaker-service",
+        "CoffeeMaker": "coffeemaker-service",
         "音箱": "speaker-mi",
         "体重秤": "weight-lexin",
         "Keep应用": "tv",
@@ -82,7 +84,18 @@ def get_resource_instance_id_self(user_id, app_instance_id, resource_id):
         "水壶": "kettle-mi",
         "星巴克": "starbuck-service",
         "小爱音箱": "speaker-mi",
-        "下单应用": "ordercoffee-service",
+        "Orders": "ordercoffee-service",
     }
-    resource_instance=resource_instance_map.get(resource_id[0])
+    resource_instance = resource_instance_map.get(resource_id[0])
     return resource_instance
+
+
+def get_resource_param():
+    data = {
+        "filePath": "/root/activiti/kg/hct_Ontology_latest.ttl",
+        "userId": 18
+    }
+    # data_json = json.dumps(data)
+    reponse = requests.post("http://www.cpss2019.fun:21910/KG201910/getWorkflowInstanceInitParams", data)
+    output = reponse.json()
+    return output

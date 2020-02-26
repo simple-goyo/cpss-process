@@ -182,7 +182,10 @@ def save_app_instance_self():
         else:
             # 对于非执行产生的实例,在初始时进行实例化绑定
             resource_instance_id = get_resource_instance_id_self(user_id, str(app_instance_id), resource_id)
+            # 去获取资源知识图谱接口获取对象信息
             insert_app_instance_resource(t_app_instance, app_instance_id, resource_id[1], resource_instance_id)
+            body = get_resource_param()
+            insert_app_instance_resource_param(t_app_instance, app_instance_id, resource_instance_id, body)
     # 调用执行引擎
     mongodb = {
         't_app_class': t_app_class,

@@ -9,10 +9,11 @@
 '''
 
 # here put the import lib
-from prefect import Task, Flow
+# from prefect import Task, Flow
 from bson.json_util import loads
 from threading import Thread
 from service.app_service import *
+from service.serviceDeployment_remote import *
 from util.utctime import *
 import requests
 import time
@@ -20,15 +21,16 @@ import pika
 import logging
 
 
-class Scp_StartEvent_Task(Task):
-    def __init__(self, name: str, **config):
-        super().__init__(name=name)
+class Scp_StartEvent_Task():
+    def __init__(self, name, **config):
+        # super().__init__(name=name)
         self.action_desc = ''
         self.instance_id = config.get('instance_id')
         self.t_app_class = config.get('t_app_class')
         self.t_app_instance = config.get('t_app_instance')
         self.task_name = config.get('task_name')
         self.task_id = config.get('task_id')
+        self.task_type = config.get('task_type')
 
     def run(self, **input):
         # update_stop_task(self)
@@ -38,128 +40,24 @@ class Scp_StartEvent_Task(Task):
         # pub_to_MQ({'msg': 'flow start', 'flow id': ''})
 
 
-class Scp_EndEvent_Task(Task):
+class Scp_EndEvent_Task():
     def run(self):
         pub_to_MQ({'msg': 'flow end', 'flow id': ''})
 
 
-class Scp_Task(Task):
-    def __init__(self, name: str, **config):
-        super().__init__(name=name)
+class Scp_Task():
+    def __init__(self, name, **config):
+        # super().__init__(name=name)
         self.body = ''
         self.action_desc = ''
         self.instance_id = config.get('instance_id')
         self.t_app_class = config.get('t_app_class')
         self.t_app_instance = config.get('t_app_instance')
         self.task_name = config.get('task_name')
-        self.task_id = config.get('task_id')
-        self.task_executor = config.get('task_executor')
-
-    def run(self, **input):
-        # 初始化输出
-        output = None
-        # 获取访问地址
-        task_url = get_task_url(self)
-        # 更新任务状态
-        update_start_task(self)
-        try:
-            call_resource(self, task_url[0], task_url[1])
-            receive_from_monitor(self, task_url[0])
-            logging.info("receive result message: " + self.body)
-        except:
-            print(self.task_name, "服务请求错误")
-            update_stop_task(self, "3")
-            return output
-        update_stop_task(self, "2")
-        return output
-
-
-class Scp_Event_Task(Task):
-    def __init__(self, name, **config):
-        super().__init__(name=name)
-        self.action_desc = ''
-        self.instance_id = config.get('instance_id')
-        self.t_app_class = config.get('t_app_class')
-        self.t_app_instance = config.get('t_app_instance')
         self.task_type = config.get('task_type')
-        self.task_name = config.get('task_name')
         self.task_id = config.get('task_id')
         self.task_executor = config.get('task_executor')
-
-    def run(self, **input):
-        '''
-        任务执行
-        '''
-        # 获取访问地址
-        task_url = get_task_url(self)
-        # 获取输入
-        # 初始化输出
-        output = None
-        # 推送任务开始消息到中间件
-        # 更新任务状态
-        update_start_task(self)
-        # 等待MQ消息
-        print('wait for event')
-
-        if self.name == '视频播放完成':
-            time.sleep(30)
-
-        b_event = False
-        # b_event = True
-        # time.sleep(20)
-        count = 0
-        weight = 0
-        while not b_event:
-            r = requests.get(task_url)
-            output = r.json()
-            # 咖啡机做好了事件
-            data = output.get("data")
-            if data is None:
-                print(self.task_name, "智能合约请求错误:", output.get('msg'))
-                update_stop_task(self, "3")
-                return output
-            # data1 = loads(loads(loads(loads(data).get("result")).get("response")).get("returnJSONStr"))
-            # data1 = loads(loads(loads(data).get("result")).get("returnJSONStr"))
-            # data1 = loads(loads(loads(loads(data).get("result")).get("response")).get("returnJSONStr"))
-            if self.task_name == '咖啡制作完成':
-                try:
-                    data1 = loads(loads(loads(data).get("result")).get("returnJSONStr"))
-                    state_value = data1.get("data").get("data").get("State").get("value")
-                    if state_value == "3":
-                        b_event = True
-                except:
-                    print(self.task_name, "智能合约解析请求错误:", output.get('data'))
-                    update_stop_task(self, "3")
-                    return output
-            # 体重秤事件
-            elif self.task_name == '获取体重数据':
-                try:
-                    data1 = loads(loads(loads(data).get("result")).get("returnJSONStr"))
-                    weight_new = data1.get("weight")
-                    if weight == 0:
-                        weight = weight_new
-                    else:
-                        if weight != weight_new:
-                            b_event = True
-                        else:
-                            b_event = False
-                    if count > 3:
-                        b_event = True
-                except:
-                    print(self.task_name, "智能合约解析请求错误:", output.get('data'))
-                    update_stop_task(self, "3")
-                    return output
-            elif self.task_name == '视频播放完成':
-                b_event = True
-            # 继续
-            count += 1
-            if count > 15:
-                b_event = True
-            time.sleep(10)
-
-        # 更新任务状态
-        update_stop_task(self, "2")
-        return output
+        self.task_input = config.get('task_input')
 
 
 def get_task_url(self):
@@ -238,7 +136,7 @@ def receive_from_monitor(self, resource_name):
         logging.info('[x] Recieved %r' % body)
         self.body = body
         ch.basic_ack(delivery_tag=method.delivery_tag)  # 收到消息后通知mq
-        channel.close()   # !!!在执行引擎中使用 表示只接收一次即关闭监听 接着执行流程的下一步
+        channel.close()  # !!!在执行引擎中使用 表示只接收一次即关闭监听 接着执行流程的下一步
 
     channel.basic_consume(result.method.queue,
                           callback,
@@ -347,13 +245,16 @@ def exception_handler(state, cur_task):
 # 通用流程
 class CommonFlow:
     def __init__(self, instance_id, **mongodb):
-        self.flow = Flow("Run a Prefect Flow in Docker")
+        # self.flow = Flow("Run a Prefect Flow in Docker")
         self.instance_id = instance_id
         self.t_app_class = mongodb.get('t_app_class')
         self.t_app_instance = mongodb.get('t_app_instance')
         self.app_class_child_shapes = find_app_class_by_instance_id(self.t_app_instance, self.instance_id).get(
             "app_class").get("childShapes")
+        self.user_id = find_app_instance_by_id(
+            self.t_app_instance, self.instance_id).get("user_id")
         self.all_action_count = 0
+        self.start_tasks = []
         self.get_all_action_count()
 
     def get_all_action_count(self):
@@ -368,10 +269,14 @@ class CommonFlow:
         t.start()
 
     def new_thread(self):
+
         # 获取流程信息
         self.get_flow(None)
         # 拼接流程
-        state = self.flow.run()
+        # todo 开始执行
+        for start_task in self.start_tasks:
+            print(start_task)
+        # state = self.flow.run()
         print("执行完成")
 
     def get_flow(self, pre_task):
@@ -390,26 +295,74 @@ class CommonFlow:
                         'task_id': child_shape.get("resourceId"),
                     }
                     task = Scp_StartEvent_Task(name="StartNoneEvent", **task_config)
-                    self.flow.add_task(task)
+                    # todo 加入初始任务节点
+                    self.start_tasks.append(task)
                     # 配置初始输入库
                     # task_input = self.app_instance_resource
                     # task.bind(**task_input, flow=self.flow)
                     # 开始加入其他task
-                    self.all_action_count -= 1
+                    self.get_flow(task)
+                elif stencil == 'DefaultEvent':
+                    # 获取开始task
+                    task = self.get_event_task(child_shape)
+                    # todo 加入初始任务节点
+                    self.start_tasks.append(task)
+                    # self.flow.add_task(task)
+                    # 配置初始输入库
+                    # task_input = self.app_instance_resource
+                    # task.bind(**task_input, flow=self.flow)
+                    # 开始加入其他task
                     self.get_flow(task)
         else:
             # 判断是否所有的节点都已经生成完了，如果都完了就开始执行
             if self.all_action_count == 0:
                 return "success"
+            self.all_action_count -= 1
             # 判断当前节点还有没有下一个节点
             child_shape = self.get_child_shape_by_id(pre_task.task_id)
             next_nodes = self.get_next_nodes(child_shape)
-            for next_node in next_nodes:
-                task = self.get_task(next_node)
-                self.flow.add_task(task)
-                task.set_upstream(pre_task, flow=self.flow)
-                self.all_action_count -= 1
-                self.get_flow(task)
+            next_workflow_proxy = ""
+            if len(next_nodes) > 0:
+                for next_node in next_nodes:
+                    task = self.get_task(next_node)
+                    next_workflow_proxy += task.task_id + ","
+                    self.get_flow(task)
+            else:
+                next_workflow_proxy = "null"
+            if pre_task.task_type == "StartNoneEvent":
+                # deployment_and_service_name = "i-"+str(pre_task.instance_id) + pre_task.task_id+"-t"
+                # deployment_and_service_name = deployment_and_service_name.lower()
+                deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
+                deployment_and_service_name = "s" + deployment_and_service_name + "s"
+                print(deployment_and_service_name)
+                clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
+                params = {'workflow_instance_id': str(self.instance_id),
+                          'task_type': 'StartNoneEvent',
+                          'task_id': pre_task.task_id,
+                          'next_workflow_proxy': next_workflow_proxy}
+                print(params)
+                init_address = "http://" + clusterIP + ":8888/init"
+                print(init_address)
+                reponse = requests.post(init_address, params)
+                print("------reponse-------" + reponse)
+            else:
+                deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
+                deployment_and_service_name = "s" + deployment_and_service_name + "s"
+                print(deployment_and_service_name)
+                clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
+                print("-------------" + str(clusterIP) + "------------")
+                params = {'workflow_instance_id': str(self.instance_id),
+                          'task_type': pre_task.task_type,
+                          'task_id': pre_task.task_id,
+                          'executor_resource_id': pre_task.task_executor,
+                          'service_input': pre_task.task_input,
+                          'service_name': pre_task.task_name,
+                          'next_workflow_proxy': next_workflow_proxy}
+                print(params)
+                init_address = "http://" + clusterIP + ":8888/init"
+                print(init_address)
+                reponse = requests.post(init_address, params)
+                print("------reponse-------" + reponse)
 
     def get_child_shape_by_id(self, target_id):
         for child_shape in self.app_class_child_shapes:
@@ -434,6 +387,11 @@ class CommonFlow:
         task_name = node.get("properties").get("name")
         task_id = node.get("resourceId")
         task_executor = node.get("properties").get("activityelement").get("id")
+        task_inputs = node.get("properties").get("input")
+        task_input = ""
+        for input0 in task_inputs:
+            task_input += input0.get("id") + "." + input0.get("resource_param") + "." + input0.get(
+                "service_param") + "$"
         task_config = {
             'instance_id': self.instance_id,
             't_app_class': self.t_app_class,
@@ -442,13 +400,16 @@ class CommonFlow:
             'task_name': task_name,
             'task_id': task_id,
             'task_executor': task_executor,
+            'task_input': task_input
         }
-        if task_type == 'DefaultEvent':
-            task = Scp_Event_Task(name=task_name, **task_config)
-            return task
-        else:
-            task = Scp_Task(name=task_name, **task_config)
-            return task
+        task = Scp_Task(name=task_name, **task_config)
+        return task
+        # if task_type == 'DefaultEvent':
+        #     task = Scp_Event_Task(name=task_name, **task_config)
+        #     return task
+        # else:
+        #     task = Scp_Task(name=task_name, **task_config)
+        #     return task
 
 
 if __name__ == "__main__":

@@ -510,3 +510,47 @@ INFO:2020-01-10 10:52:36,059:task_runner.py:run:Task 'ËÍ¿§·È': Starting task run
 INFO:2020-01-10 10:52:36,210:flow_self.py:call_resource:workflow engine is calling resource service orderCoffee
 INFO:2020-01-10 10:52:36,332:task_runner.py:run:Task 'ËÍ¿§·È': finished task run for task with final state: 'Success'
 INFO:2020-01-10 10:52:36,333:flow_runner.py:determine_final_state:Flow run SUCCESS: all reference tasks succeeded
+INFO:2020-02-14 20:11:32,537:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-14 20:13:10,725:_internal.py:_log:127.0.0.1 - - [14/Feb/2020 20:13:10] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-14 20:21:14,544:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-14 20:21:32,243:_internal.py:_log:127.0.0.1 - - [14/Feb/2020 20:21:32] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-14 20:22:11,987:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-14 20:22:22,117:_internal.py:_log:127.0.0.1 - - [14/Feb/2020 20:22:22] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:03:19,693:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 20:05:49,684:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 20:07:12,739:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 20:13:14,354:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:13:14] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:18:16,216:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:18:16] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:20:00,044:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 20:20:24,021:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:20:24] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:21:38,076:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:21:38] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:44:09,274:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:44:09] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:45:00,961:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:45:00] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:45:37,138:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:45:37] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:56:13,127:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 20:56:20,660:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 20:56:20] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 20:59:17,509:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 21:00:37,436:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:00:37] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:02:43,166:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:02:43] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:04:52,486:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:04:52] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:08:21,872:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:08:21] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:11:52,952:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:11:52] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:21:41,897:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 21:22:33,917:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:22:33] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:23:19,010:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:23:19] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:24:14,335:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:24:14] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:25:10,924:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 21:25:14,672:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:25:14] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:35:12,283:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 21:35:22,613:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:35:22] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:36:21,276:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 21:36:29,758:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:36:29] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:39:33,820:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 21:49:30,389:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 21:49:30] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-22 21:59:27,606:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 22:00:30,076:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 22:01:53,281:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-22 22:02:32,802:_internal.py:_log:127.0.0.1 - - [22/Feb/2020 22:02:32] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-02-25 22:08:44,362:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-25 22:08:58,812:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-02-25 22:09:24,186:_internal.py:_log:127.0.0.1 - - [25/Feb/2020 22:09:24] "GET /save_app_instance_self HTTP/1.1" 200 -
