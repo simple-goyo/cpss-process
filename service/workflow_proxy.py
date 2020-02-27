@@ -43,11 +43,11 @@ def init():
     user_id = request.values.get("user_id")
     workflow_instance_id = request.values.get("workflow_instance_id")
     workflow_proxy_type = request.values.get("workflow_proxy_type")
-    workflow_proxy_id = request.values.get("task_id")
+    workflow_proxy_id = request.values.get("workflow_proxy_id")
     executor_resource_id = request.values.get("executor_resource_id")
     service_name = request.values.get("service_name")
     service_input = request.values.get("service_input")
-    next_workflow_proxy_ids = request.values.get("next_task_ids")
+    next_workflow_proxy_ids = request.values.get("next_workflow_proxy")
     logging.info("parameters are initialized.")
     return "success"
 
@@ -82,10 +82,23 @@ def executetask():
     else:
         # 访问下一个流程代理服务
         logging.info("request next workflow proxy service.")
-        url = 'http://' + next_workflow_proxy_ids + '-proxy.default:8888/'
-        logging.info("request result: " + requests.post(url, params).text)
+        action_ips = find_app_instance_action_ip_by_instance_id(workflow_instance_id).get("action_ip")
+        # url = 'http://' + next_workflow_proxy_ids + '-proxy.default:8888/'
+        next_workflow_proxy_id_list = next_workflow_proxy_ids.split(",")
+        for next_workflow_proxy_id in next_workflow_proxy_id_list:
+            if next_workflow_proxy_id == "":
+                continue
+            next_ip = action_ips.get(next_workflow_proxy_id)
+            next_run_address = "http://" + next_ip + ":8888/run"
+            # next_run_address = "http://localhost:5001/init"
+            print(next_run_address)
+            headers = {"Content-Type": "application/x-www-form-urlencoded"}
+            params = {}
+            response = requests.post(next_run_address, data=params, headers=headers)
+            print("response Code: " + str(response.status_code))
+            print("response content: " + response.text)
+            logging.info("next_run_address:"+next_run_address+"---response:" + str(response))
     return "success"
-
 
 
 def get_resource_instance_id(resource_id):
@@ -93,6 +106,11 @@ def get_resource_instance_id(resource_id):
     # 获取执行者实例id
     resource_instance_id = app_instance_resources.get(resource_id)
     return resource_instance_id
+
+
+def find_app_instance_action_ip_by_instance_id(instance_id):
+    action_ip = t_app_instance.find_one({'_id': ObjectId(instance_id)}, {"action_ip": 1})
+    return action_ip
 
 
 def get_service_name_en():
@@ -206,6 +224,7 @@ def insert_app_instance_resource_param(resource_instance_id, param):
     myquery = {"_id": workflow_instance_id}
     newvalues = {"$set": {"resource_param." + resource_instance_id: param}}
     t_app_instance.update_one(myquery, newvalues)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5001')

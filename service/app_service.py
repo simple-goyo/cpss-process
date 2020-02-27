@@ -83,6 +83,12 @@ def insert_app_instance(t_app_instance, app_instance):
     return insert_one_result.inserted_id
 
 
+def find_all_app_instance(t_app_instance):
+    app_instances = []
+    for app_instance in t_app_instance.find():
+        app_instances.append(app_instance)
+    return app_instances
+
 def insert_app_instance_resource(t_app_instance, app_instance_id, resource_id, resource_instance_id):
     myquery = {"_id": app_instance_id}
     newvalues = {"$set": {"resource." + resource_id: resource_instance_id}}
@@ -105,6 +111,11 @@ def update_app_instance_action_ip(t_app_instance, app_instance_id, action_id, ac
     myquery = {"_id": ObjectId(app_instance_id)}
     newvalues = {"$set": {"action_ip." + action_id: action_ip}}
     t_app_instance.update_one(myquery, newvalues)
+
+
+def find_app_instance_action_ip_by_instance_id(t_app_instance, app_instance_id):
+    action_ip = t_app_instance.find_one({'_id': ObjectId(app_instance_id)}, {"action_ip": 1})
+    return action_ip
 
 
 def update_app_instance_action_time(t_app_instance, app_instance_id, action_id, action_state, action_time):

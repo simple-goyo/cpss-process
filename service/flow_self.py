@@ -274,8 +274,18 @@ class CommonFlow:
         self.get_flow(None)
         # 拼接流程
         # todo 开始执行
+        action_ips = find_app_instance_action_ip_by_instance_id(self.t_app_instance, self.instance_id).get("action_ip")
+        print(action_ips)
         for start_task in self.start_tasks:
-            print(start_task)
+            start_ip = action_ips.get(start_task.task_id)
+            start_run_address = "http://" + start_ip + ":8888/run"
+            print(start_run_address)
+            headers = {"Content-Type": "application/x-www-form-urlencoded"}
+            params = {}
+            response = requests.post(start_run_address, data=params, headers=headers)
+            print("response Code: " + str(response.status_code))
+            print("response content: " + response.text)
+
         # state = self.flow.run()
         print("执行完成")
 
@@ -337,43 +347,39 @@ class CommonFlow:
                 clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
                 update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
                 params = {'workflow_instance_id': str(self.instance_id),
-                          'task_type': 'StartNoneEvent',
-                          'task_id': pre_task.task_id,
+                          'workflow_proxy_type': 'StartNoneEvent',
+                          'workflow_proxy_id': pre_task.task_id,
                           'next_workflow_proxy': next_workflow_proxy}
                 print("------params0-------" + str(params))
                 init_address = "http://" + clusterIP + ":8888/init"
+                # init_address = "http://106.15.102.123:31507/init"
                 print("------init_address-------" + init_address)
-                headers = {}
-                files = []
-                reponse = requests.request("POST", init_address, headers=headers, data=params, files=files)
-                print("------reponse-------" + reponse)
+                headers = {"Content-Type": "application/x-www-form-urlencoded"}
+                time.sleep(10)  # 等待部署好
+                response = requests.post(init_address, data=params, headers=headers)
+                print("response Code: " + str(response.status_code))
+                print("response content: " + response.text)
             else:
                 deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
                 deployment_and_service_name = "s" + deployment_and_service_name + "s"
                 clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
                 update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
                 params = {'workflow_instance_id': str(self.instance_id),
-                          'task_type': pre_task.task_type,
-                          'task_id': pre_task.task_id,
+                          'workflow_proxy_type': pre_task.task_type,
+                          'workflow_proxy_id': pre_task.task_id,
                           'executor_resource_id': pre_task.task_executor,
                           'service_input': pre_task.task_input,
                           'service_name': pre_task.task_name,
                           'next_workflow_proxy': next_workflow_proxy}
                 print("------params1-------" + str(params))
-                init_address = "http://" + clusterIP + ":8888/init"
-                print("------init_address-------" + init_address)
-                body = {'user_id': 'user_id',
-                        'workflow_instance_id': 'workflow_instance_id',
-                        'workflow_proxy_type': 'workflow_proxy_type',
-                        'task_id': 'task_id',
-                        'executor_resource_id': 'executor_resource_id',
-                        'service_name': 'service_name',
-                        'service_input': 'service_input',
-                        'next_task_ids': 'next_task_ids'}
                 # body = {"payload": "{\"action\":\"start\",\"mode\":\"0\",\"level\":\"0\",\"num\":\"0\"}",
                 #         "topic": "lab/lab401_coffee1/switch"}
+                init_address = "http://" + clusterIP + ":8888/init"
+                # init_address = "http://106.15.102.123:31507/init"
+                print("------init_address-------" + init_address)
                 headers = {"Content-Type": "application/x-www-form-urlencoded"}
-                response = requests.post(init_address, data=body, headers=headers)
+                time.sleep(10)  # 等待部署好
+                response = requests.post(init_address, data=params, headers=headers)
                 print("response Code: " + str(response.status_code))
                 print("response content: " + response.text)
 
