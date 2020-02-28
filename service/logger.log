@@ -1,17 +1,130 @@
-INFO:2020-02-27 09:19:33,810:workflow_proxy.py:executetask:StartNoneEvent is run
-INFO:2020-02-27 09:19:33,811:workflow_proxy.py:executetask:request next workflow proxy service.
-INFO:2020-02-27 09:19:35,855:workflow_proxy.py:init:parameters are initialized.
-INFO:2020-02-27 09:19:35,859:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 09:19:35] "POST /init HTTP/1.1" 200 -
-INFO:2020-02-27 09:19:35,864:workflow_proxy.py:executetask:next_run_addresshttp://localhost:5001/init---response: <Response [200]>
-INFO:2020-02-27 09:19:37,885:workflow_proxy.py:init:parameters are initialized.
-INFO:2020-02-27 09:19:37,888:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 09:19:37] "POST /init HTTP/1.1" 200 -
-INFO:2020-02-27 09:19:37,893:workflow_proxy.py:executetask:next_run_addresshttp://localhost:5001/init---response: <Response [200]>
-INFO:2020-02-27 09:19:53,191:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 09:19:53] "POST /run HTTP/1.1" 200 -
-INFO:2020-02-27 09:28:24,867:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
-INFO:2020-02-27 09:28:29,442:workflow_proxy.py:init:parameters are initialized.
-INFO:2020-02-27 09:28:29,446:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 09:28:29] "POST /init HTTP/1.1" 200 -
-INFO:2020-02-27 09:28:45,452:workflow_proxy.py:executetask:Task is run
-ERROR:2020-02-27 09:28:56,023:app.py:log_exception:Exception on /run [POST]
+INFO:2020-02-28 20:49:09,766:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 20:49:09,806:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1236, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59001), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 20:49:09,808:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D5CA761EF0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D5CA761EF0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 20:49:09,918:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D5CA761EF0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 20:49:09,919:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D5CA761EF0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 20:49:09,919:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D5CA761EF0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 20:49:09,921:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 20:49:10,110:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 20:50:21,056:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 20:52:06,804:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 20:52:08,395:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 20:52:08,398:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 20:52:08] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 20:52:13,590:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 20:52:15,518:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 20:52:19,321:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 20:52:32,388:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 20:52:32,423:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59046), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 20:52:32,425:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000159B88286D8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000159B88286D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 20:52:32,536:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000159B88286D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 20:52:32,537:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000159B88286D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 20:52:32,538:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000159B88286D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 20:52:32,539:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 20:52:32,732:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 20:52:44,561:workflow_proxy.py:callback:[x] Recieved b'!!!!!!!'
+INFO:2020-02-28 21:01:08,634:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:01:16,245:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:01:16,248:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:01:16] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:01:18,237:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:01:21,155:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:01:24,448:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:01:28,688:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:01:28,734:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1116, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59089), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:01:28,736:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000201DA71CCC0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000201DA71CCC0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:01:28,842:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000201DA71CCC0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:01:28,842:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000201DA71CCC0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:01:28,843:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000201DA71CCC0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:01:28,844:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:01:29,026:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:01:34,241:workflow_proxy.py:callback:[x] Recieved b'!!!!!!!'
+INFO:2020-02-28 21:02:18,255:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:02:28,004:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:02:28,007:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:02:28] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:02:29,442:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:02:42,083:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:02:43,948:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:02:46,371:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:02:46,406:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1252, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59117), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:02:46,408:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:02:46,534:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:02:46,535:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:02:46,535:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:02:46,536:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:02:46,715:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:02:52,002:workflow_proxy.py:callback:[x] Recieved b'!!!!!!!'
+INFO:2020-02-28 21:03:46,071:workflow_proxy.py:call_workflow_proxy:request next workflow proxy service.
+INFO:2020-02-28 21:04:12,732:channel.py:close:Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>>
+INFO:2020-02-28 21:04:12,779:channel.py:_on_closeok:Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002371F6B0860> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>>
+INFO:2020-02-28 21:04:12,785:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:04:12] "POST /run HTTP/1.1" 200 -
+INFO:2020-02-28 21:04:25,328:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:04:29,581:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:04:29,584:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:04:29] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:04:31,291:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:04:31,303:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:04:31,406:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:04:36,052:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:04:36,090:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1220, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59137), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:04:36,092:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:04:36,206:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:04:36,206:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:04:36,207:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:04:36,208:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:04:36,399:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:04:41,695:workflow_proxy.py:callback:[x] Recieved b'!!!!!!!'
+INFO:2020-02-28 21:05:21,891:workflow_proxy.py:call_workflow_proxy:request next workflow proxy service.
+INFO:2020-02-28 21:05:53,580:channel.py:close:Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>>
+INFO:2020-02-28 21:05:53,621:channel.py:_on_closeok:Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001DB06060B70> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>>
+INFO:2020-02-28 21:05:53,627:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:05:53] "POST /run HTTP/1.1" 200 -
+INFO:2020-02-28 21:07:32,989:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:07:44,961:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:07:44,965:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:07:44] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:07:46,947:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:07:46,965:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:07:47,119:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:07:49,038:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:07:49,076:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1216, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59169), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:07:49,084:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:07:49,207:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:07:49,209:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:07:49,210:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:07:49,215:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:07:49,421:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:07:57,544:workflow_proxy.py:callback:[x] Recieved b'!!!!!!!'
+INFO:2020-02-28 21:07:58,978:workflow_proxy.py:call_workflow_proxy:request next workflow proxy service.
+INFO:2020-02-28 21:09:11,507:channel.py:close:Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>>
+INFO:2020-02-28 21:09:11,551:channel.py:_on_closeok:Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002A12760C390> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>>
+INFO:2020-02-28 21:09:13,246:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:09:13] "POST /run HTTP/1.1" 200 -
+INFO:2020-02-28 21:13:14,633:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:13:29,964:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:13:29,969:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:13:29] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:13:32,223:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:13:32,238:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:13:32,335:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:13:33,526:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:13:33,559:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59245), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:13:33,561:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000017B1555EBA8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000017B1555EBA8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:13:33,666:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000017B1555EBA8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:13:33,666:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000017B1555EBA8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:13:33,667:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000017B1555EBA8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:13:33,668:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:13:33,842:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:13:37,469:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+INFO:2020-02-28 21:16:28,957:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:16:55,529:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:16:55,532:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:16:55] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:16:56,927:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:16:56,948:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:16:57,041:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:16:58,236:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:16:58,272:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1172, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59377), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:16:58,273:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000145811DBBE0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000145811DBBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:16:58,378:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000145811DBBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:16:58,378:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000145811DBBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:16:58,378:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000145811DBBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:16:58,379:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:16:58,554:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:17:01,322:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:17:01,332:app.py:log_exception:Exception on /run [POST]
 Traceback (most recent call last):
   File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -25,9 +138,586 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 67, in executetask
-    executor_resource_instance_id = get_resource_instance_id(executor_resource_id)
-  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 105, in get_resource_instance_id
-    app_instance_resources = find_app_instance_resource_by_instance_id().get("resource")
-AttributeError: 'NoneType' object has no attribute 'get'
-INFO:2020-02-27 09:28:56,035:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 09:28:56] "POST /run HTTP/1.1" 500 -
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 232, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 217, in callback
+    body_json=json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+INFO:2020-02-28 21:17:01,430:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:17:01] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:17:36,975:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:17:40,930:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:17:40,933:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:17:40] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:17:42,940:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:17:42,953:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:17:43,055:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:17:44,275:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:17:44,313:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1220, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59414), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:17:44,315:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001957965ECF8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001957965ECF8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:17:44,436:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001957965ECF8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:17:44,437:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001957965ECF8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:17:44,437:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001957965ECF8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:17:44,443:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:17:44,635:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:17:50,272:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:18:05,694:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 232, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 217, in callback
+    body_json = json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+INFO:2020-02-28 21:18:05,700:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:18:05] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:18:16,516:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:18:18,952:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:18:18,955:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:18:18] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:18:20,760:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:18:20,773:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:18:20,879:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:18:22,712:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:18:22,747:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1204, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59452), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:18:22,749:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002119483C198>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002119483C198> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:18:22,853:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002119483C198> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:18:22,854:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002119483C198> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:18:22,854:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002119483C198> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:18:22,855:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:18:23,029:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:18:33,129:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+INFO:2020-02-28 21:20:17,689:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:20:21,876:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:20:21,881:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:20:21] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:20:23,126:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:20:23,140:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:20:23,236:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:20:25,730:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:20:25,765:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1112, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59562), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:20:25,767:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027B0E66EB38>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027B0E66EB38> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:20:25,874:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027B0E66EB38> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:20:25,875:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027B0E66EB38> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:20:25,875:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000027B0E66EB38> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:20:25,876:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:20:26,057:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:20:29,149:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:20:44,801:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 232, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 217, in callback
+    body_json = json.loads(str(body_byte))
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:2020-02-28 21:20:44,808:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:20:44] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:21:27,385:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:21:31,856:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:21:31,859:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:21:31] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:21:33,682:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:21:33,697:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:21:33,798:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:21:35,434:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:21:35,464:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1204, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59599), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:21:35,466:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D4933FFE10>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D4933FFE10> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:21:35,563:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D4933FFE10> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:21:35,564:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D4933FFE10> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:21:35,564:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001D4933FFE10> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:21:35,565:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:21:35,723:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:21:39,076:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+INFO:2020-02-28 21:22:59,419:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:23:15,514:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:23:15,518:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:23:15] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:23:16,965:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:23:16,979:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:23:17,087:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:23:18,025:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:23:18,060:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1220, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59694), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:23:18,062:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DDA0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DDA0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:23:18,173:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DDA0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:18,173:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DDA0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:18,174:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DDA0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:18,175:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:23:18,347:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:23:21,655:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:23:30,637:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 233, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 218, in callback
+    body_json = json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+INFO:2020-02-28 21:23:30,644:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:23:30] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:23:34,947:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:23:34,961:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:23:35,050:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:23:37,249:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:23:37,305:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1096, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59713), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:23:37,307:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DBE0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:23:37,416:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:37,416:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:37,416:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3DBE0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:37,417:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:23:37,616:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:23:43,796:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:23:51,410:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 233, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 218, in callback
+    body_json = json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+INFO:2020-02-28 21:23:51,413:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:23:51] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:23:54,373:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:23:54,387:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:23:54,482:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:23:57,978:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:23:58,015:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1360, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59732), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:23:58,017:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3D1D0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3D1D0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:23:58,124:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3D1D0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:58,124:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3D1D0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:58,124:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001E886E3D1D0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:23:58,125:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:23:58,308:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:24:01,436:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+INFO:2020-02-28 21:25:20,375:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:25:25,471:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:25:25,475:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:25:25] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:25:26,793:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:25:26,808:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:25:26,910:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:25:26,916:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:25:26,950:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1160, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59770), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:25:26,954:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F0F9E7A400>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F0F9E7A400> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:25:27,063:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F0F9E7A400> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:25:27,064:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F0F9E7A400> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:25:27,065:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000001F0F9E7A400> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:25:27,066:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:25:27,251:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:25:34,659:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:25:59,190:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 233, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 218, in callback
+    body_json = json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+INFO:2020-02-28 21:25:59,197:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:25:59] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:29:01,750:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:29:06,542:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:29:06,546:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:29:06] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:29:08,651:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:29:08,669:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:29:08,782:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:29:08,788:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:29:08,823:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1160, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59916), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:29:08,827:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEEAC18>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEEAC18> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:29:08,925:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEEAC18> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:29:08,926:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEEAC18> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:29:08,927:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEEAC18> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:29:08,929:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:29:09,099:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:29:14,739:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:29:48,156:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 220, in callback
+    body_json = json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 90, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 238, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 222, in callback
+    print("-----1----"+e.args)
+TypeError: can only concatenate str (not "tuple") to str
+INFO:2020-02-28 21:29:48,163:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:29:48] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:30:01,938:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:30:01,952:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:30:02,046:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:30:02,054:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:30:02,092:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1188, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 59949), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:30:02,096:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEF16D8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEF16D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:30:02,208:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEF16D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:30:02,209:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEF16D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:30:02,209:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEF16D8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:30:02,211:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:30:02,397:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:30:05,426:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+ERROR:2020-02-28 21:31:13,420:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 220, in callback
+    body_json = json.loads(body_str)
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\soft\2019-12-03-python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 90, in executetask
+    receive_result(executor_resource_instance_id)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 238, in receive_result
+    channel.start_consuming()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 222, in callback
+    print("-----1----"+e.args)
+TypeError: can only concatenate str (not "tuple") to str
+INFO:2020-02-28 21:31:13,423:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:31:13] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:31:16,549:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:31:16,565:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:31:16,653:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:31:16,657:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:31:16,692:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1144, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60006), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:31:16,695:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEFF7B8>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEFF7B8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:31:16,803:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEFF7B8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:31:16,804:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEFF7B8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:31:16,804:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000020CFCEFF7B8> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:31:16,806:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:31:17,002:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:31:23,137:workflow_proxy.py:callback:[x] Recieved b"{'state1': '1', 'data1': {'action1': '2', 'mode1': '3', 'level1': '4', 'num1': '5'}}"
+INFO:2020-02-28 21:32:36,184:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:32:39,729:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:32:39,732:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:32:39] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:32:41,558:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:32:41,574:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:32:41,677:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:32:41,683:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:32:41,716:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1164, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60065), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:32:41,720:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000023FC31076A0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000023FC31076A0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:32:41,825:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000023FC31076A0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:32:41,827:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000023FC31076A0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:32:41,828:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000023FC31076A0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:32:41,831:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:32:42,018:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:32:46,610:workflow_proxy.py:callback:[x] Recieved b"{'state1': '1', 'data1': {'action1': '2', 'mode1': '3', 'level1': '4', 'num1': '5'}}"
+INFO:2020-02-28 21:33:45,638:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:33:49,889:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:33:49,891:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:33:49] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:33:55,482:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:33:55,495:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:33:55,592:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:33:55,598:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:33:55,632:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1176, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60101), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:33:55,635:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002590528AF60>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002590528AF60> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:33:55,741:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002590528AF60> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:33:55,742:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002590528AF60> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:33:55,743:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002590528AF60> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:33:55,745:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:33:55,924:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:33:58,445:workflow_proxy.py:callback:[x] Recieved b"{'state1': '1', 'data1': {'action1': '2', 'mode1': '3', 'level1': '4', 'num1': '5'}}"
+INFO:2020-02-28 21:35:51,971:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:36:19,573:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:37:45,749:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-28 21:37:49,681:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-28 21:37:49,683:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:37:49] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-28 21:37:51,482:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:37:51,500:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:37:51,613:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:37:51,619:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:37:51,657:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1192, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60242), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:37:51,660:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2CA2B0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2CA2B0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:37:51,774:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2CA2B0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:37:51,775:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2CA2B0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:37:51,775:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2CA2B0> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:37:51,777:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:37:51,980:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:37:57,995:workflow_proxy.py:callback:[x] Recieved b"{'state1': '1', 'data1': {'action1': '2', 'mode1': '3', 'level1': '4', 'num1': '5'}}"
+INFO:2020-02-28 21:38:15,963:workflow_proxy.py:call_workflow_proxy:request next workflow proxy service.
+ERROR:2020-02-28 21:43:23,573:io_services_utils.py:_on_socket_writable:_AsyncBaseTransport._produce() failed, aborting connection: error=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None); sock=<socket.socket fd=1192, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60242), raddr=('139.196.228.210', 5672)>; Caller's stack:
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 820, in _produce
+    self._tx_buffers[0])
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 820, in _produce
+    self._tx_buffers[0])
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\utils\io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+INFO:2020-02-28 21:43:23,585:io_services_utils.py:_initiate_abort:_AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None); <socket.socket fd=1192, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60242), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:43:23,587:io_services_utils.py:_deactivate:Deactivating transport: state=1; <socket.socket fd=1192, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60242), raddr=('139.196.228.210', 5672)>
+ERROR:2020-02-28 21:43:23,589:base_connection.py:_proto_connection_lost:connection_lost: StreamLostError: ("Stream connection lost: ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)",)
+INFO:2020-02-28 21:43:23,590:connection.py:_on_stream_terminated:AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=StreamLostError: ("Stream connection lost: ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)",); pending-error=None
+INFO:2020-02-28 21:43:23,594:connection.py:_on_stream_terminated:Stack terminated due to StreamLostError: ("Stream connection lost: ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)",)
+INFO:2020-02-28 21:43:23,595:io_services_utils.py:_close_and_finalize:Closing transport socket and unlinking: state=2; <socket.socket fd=1192, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60242), raddr=('139.196.228.210', 5672)>
+ERROR:2020-02-28 21:43:23,597:blocking_connection.py:_flush_output:Unexpected connection close detected: StreamLostError: ("Stream connection lost: ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)",)
+ERROR:2020-02-28 21:43:23,601:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 90, in executetask
+    return "success"
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 238, in receive_result
+    update_app_instance_action_state(workflow_instance_id, workflow_proxy_id, "1")
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1494, in _dispatch_events
+    evt.properties, evt.body)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 228, in callback
+    # no_ack 设置成 False，在调用callback函数时，未收到确认标识，消息会重回队列
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 2113, in basic_ack
+    self._flush_output()
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 1336, in _flush_output
+    self._connection._flush_output(lambda: self.is_closed, *waiters)
+  File "D:\soft\2019-12-03-python\lib\site-packages\pika\adapters\blocking_connection.py", line 522, in _flush_output
+    raise self._closed_result.value.error
+pika.exceptions.StreamLostError: Stream connection lost: ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)
+INFO:2020-02-28 21:43:23,613:_internal.py:_log:127.0.0.1 - - [28/Feb/2020 21:43:23] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-28 21:43:28,187:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-28 21:43:28,203:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+INFO:2020-02-28 21:43:28,311:workflow_proxy.py:executetask:request result: already in queue...
+INFO:2020-02-28 21:43:28,320:connection_workflow.py:start:Pika version 1.1.0 connecting to ('139.196.228.210', 5672)
+INFO:2020-02-28 21:43:28,356:io_services_utils.py:_on_writable:Socket connected: <socket.socket fd=1432, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('192.168.3.9', 60319), raddr=('139.196.228.210', 5672)>
+INFO:2020-02-28 21:43:28,362:connection_workflow.py:_on_transport_establishment_done:Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2E0A58>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2E0A58> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>).
+INFO:2020-02-28 21:43:28,473:connection_workflow.py:_report_completion_and_cleanup:AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2E0A58> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:43:28,475:connection_workflow.py:_report_completion_and_cleanup:AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2E0A58> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:43:28,476:blocking_connection.py:_create_connection:Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000028A5A2E0A58> params=<ConnectionParameters host=139.196.228.210 port=5672 virtual_host=/ ssl=False>>
+INFO:2020-02-28 21:43:28,480:blocking_connection.py:__init__:Created channel=1
+INFO:2020-02-28 21:43:28,671:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
+INFO:2020-02-28 21:43:39,299:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"

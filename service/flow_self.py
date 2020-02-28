@@ -342,14 +342,18 @@ class CommonFlow:
             if pre_task.task_type == "StartNoneEvent":
                 # deployment_and_service_name = "i-"+str(pre_task.instance_id) + pre_task.task_id+"-t"
                 # deployment_and_service_name = deployment_and_service_name.lower()
-                deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
-                deployment_and_service_name = "s" + deployment_and_service_name + "s"
+                # deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
+                deployment_and_service_name = "s" + str(pre_task.instance_id)[-4:] + "s-t" + pre_task.task_id[-4:] + "t"
+                deployment_and_service_name = deployment_and_service_name.lower()
+                print("---deployment_and_service_name----" + deployment_and_service_name)
                 clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
                 update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
-                params = {'workflow_instance_id': str(self.instance_id),
+                params = {'user_id': self.user_id,
+                          'workflow_instance_id': str(self.instance_id),
                           'workflow_proxy_type': 'StartNoneEvent',
                           'workflow_proxy_id': pre_task.task_id,
-                          'next_workflow_proxy': next_workflow_proxy}
+                          'next_workflow_proxy': next_workflow_proxy
+                          }
                 print("------params0-------" + str(params))
                 init_address = "http://" + clusterIP + ":8888/init"
                 # init_address = "http://106.15.102.123:31507/init"
@@ -360,15 +364,19 @@ class CommonFlow:
                 print("response Code: " + str(response.status_code))
                 print("response content: " + response.text)
             else:
-                deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
-                deployment_and_service_name = "s" + deployment_and_service_name + "s"
+                # deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
+                deployment_and_service_name = "s" + str(pre_task.instance_id)[-4:] + "s-t" + pre_task.task_id[-4:] + "t"
+                deployment_and_service_name = deployment_and_service_name.lower()
+                print("---deployment_and_service_name----" + deployment_and_service_name)
                 clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
                 update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
-                params = {'workflow_instance_id': str(self.instance_id),
+                params = {'user_id': self.user_id,
+                          'workflow_instance_id': str(self.instance_id),
                           'workflow_proxy_type': pre_task.task_type,
                           'workflow_proxy_id': pre_task.task_id,
                           'executor_resource_id': pre_task.task_executor,
                           'service_input': pre_task.task_input,
+                          'service_output': pre_task.task_output,
                           'service_name': pre_task.task_name,
                           'next_workflow_proxy': next_workflow_proxy}
                 print("------params1-------" + str(params))
@@ -409,8 +417,16 @@ class CommonFlow:
         task_inputs = node.get("properties").get("input")
         task_input = ""
         for input0 in task_inputs:
-            task_input += input0.get("id") + "." + input0.get("resource_param") + "." + input0.get(
-                "service_param") + "$"
+            resource_params = input0.get("resource_param").split(",")
+            service_params = input0.get("service_param").split(",")
+            for index in range(len(resource_params)):
+                resource_param = resource_params[index]
+                service_param = service_params[index]
+                task_input += service_param + "." + input0.get("id") + "." + resource_param + "&"
+        task_outputs = node.get("properties").get("output")
+        task_output = ""
+        for output0 in task_outputs:
+            task_output += output0.get("id")
         task_config = {
             'instance_id': self.instance_id,
             't_app_class': self.t_app_class,
@@ -419,7 +435,8 @@ class CommonFlow:
             'task_name': task_name,
             'task_id': task_id,
             'task_executor': task_executor,
-            'task_input': task_input
+            'task_input': task_input,
+            "task_output": task_output
         }
         task = Scp_Task(name=task_name, **task_config)
         return task

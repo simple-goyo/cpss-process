@@ -187,7 +187,7 @@ def save_app_instance_self():
             # 去获取资源知识图谱接口获取对象信息
             insert_app_instance_resource(t_app_instance, app_instance_id, resource_id[1], resource_instance_id)
             body = get_resource_param()
-            insert_app_instance_resource_param(t_app_instance, app_instance_id, resource_instance_id, body)
+            insert_app_instance_resource_param(t_app_instance, app_instance_id, resource_id[1], body)
     # 调用执行引擎
     mongodb = {
         't_app_class': t_app_class,
@@ -195,54 +195,64 @@ def save_app_instance_self():
     }
     cf = CommonFlow(app_instance_id, **mongodb)
     cf.run_flow()
-    return "success"
+    return str(app_instance_id)
 
 
 # 保存app_instance
 @app.route('/delete_app_instance_service_self', methods={'POST', 'GET'})
 def delete_app_instance_service_self():
     app_instances = find_all_app_instance(t_app_instance)
-    with open('token.txt', 'r') as file:
-        Token = file.read().strip('\n')
-
-    APISERVER = 'https://139.196.228.210:6443'
-
-    # Create a configuration object
-    configuration = client.Configuration()
-
-    # Specify the endpoint of your Kube cluster
-    configuration.host = APISERVER
-
-    # Security part.
-    # In this simple example we are not going to verify the SSL certificate of
-    # the remote cluster (for simplicity reason)
-    configuration.verify_ssl = False
-
-    # Nevertheless if you want to do it you can with these 2 parameters
-    # configuration.verify_ssl=True
-    # ssl_ca_cert is the filepath to the file that contains the certificate.
-    # configuration.ssl_ca_cert="certificate"
-    configuration.api_key = {"authorization": "Bearer " + Token}
-
-    # configuration.api_key["authorization"] = "bearer " + Token
-    # configuration.api_key_prefix['authorization'] = 'Bearer'
-    # configuration.ssl_ca_cert = 'ca.crt'
-    # Create a ApiClient with our config
-    client.Configuration.set_default(configuration)
-
+    # with open('token.txt', 'r') as file:
+    #     Token = file.read().strip('\n')
+    #
+    # APISERVER = 'https://139.196.228.210:6443'
+    #
+    # # Create a configuration object
+    # configuration = client.Configuration()
+    #
+    # # Specify the endpoint of your Kube cluster
+    # configuration.host = APISERVER
+    #
+    # # Security part.
+    # # In this simple example we are not going to verify the SSL certificate of
+    # # the remote cluster (for simplicity reason)
+    # configuration.verify_ssl = False
+    #
+    # # Nevertheless if you want to do it you can with these 2 parameters
+    # # configuration.verify_ssl=True
+    # # ssl_ca_cert is the filepath to the file that contains the certificate.
+    # # configuration.ssl_ca_cert="certificate"
+    # configuration.api_key = {"authorization": "Bearer " + Token}
+    #
+    # # configuration.api_key["authorization"] = "bearer " + Token
+    # # configuration.api_key_prefix['authorization'] = 'Bearer'
+    # # configuration.ssl_ca_cert = 'ca.crt'
+    # # Create a ApiClient with our config
+    # client.Configuration.set_default(configuration)
+    result = []
     for app_instance in app_instances:
         app_instance_id = str(app_instance["_id"])
-        deployment_and_service_name0 = "s" + str(hash(str(app_instance_id + "sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"))) + "s"
-        deployment_and_service_name1 = "s" + str(hash(str(app_instance_id + "sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"))) + "s"
-        deployment_and_service_name2 = "s" + str(hash(str(app_instance_id + "sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2") ))+ "s"
-        print("deployment_and_service_name0" + deployment_and_service_name0)
-        delete_service(client.CoreV1Api(), deployment_and_service_name0)
-        delete_deployment(client.CoreV1Api(), deployment_and_service_name0)
-        delete_service(client.CoreV1Api(), deployment_and_service_name1)
-        delete_deployment(client.CoreV1Api(), deployment_and_service_name1)
-        delete_service(client.CoreV1Api(), deployment_and_service_name2)
-        delete_deployment(client.CoreV1Api().deployment_and_service_name2)
-    return "success"
+        task_id0="sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"
+        task_id1="sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"
+        task_id2="sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2"
+        deployment_and_service_name0 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id0[-4:] + "t").lower()
+        deployment_and_service_name1 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id1[-4:] + "t").lower()
+        deployment_and_service_name2 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id2[-4:] + "t").lower()
+        # deployment_and_service_name0 = "s" + str(
+        #     hash(str(app_instance_id + "sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"))) + "s"
+        # deployment_and_service_name1 = "s" + str(
+        #     hash(str(app_instance_id + "sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"))) + "s"
+        # deployment_and_service_name2 = "s" + str(
+        #     hash(str(app_instance_id + "sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2"))) + "s"
+        # print("deployment_and_service_name0:" + deployment_and_service_name0)
+        result.append([deployment_and_service_name0, deployment_and_service_name1, deployment_and_service_name2])
+        # delete_service(client.CoreV1Api(), deployment_and_service_name0)
+        # delete_deployment(client.CoreV1Api(), deployment_and_service_name0)
+        # delete_service(client.CoreV1Api(), deployment_and_service_name1)
+        # delete_deployment(client.CoreV1Api(), deployment_and_service_name1)
+        # delete_service(client.CoreV1Api(), deployment_and_service_name2)
+        # delete_deployment(client.CoreV1Api().deployment_and_service_name2)
+    return jsonify(result)
 
 
 # 执行app_instance

@@ -85,6 +85,7 @@ def get_resource_instance_id_self(user_id, app_instance_id, resource_id):
         "星巴克": "starbuck-service",
         "小爱音箱": "speaker-mi",
         "Orders": "ordercoffee-service",
+        "User": "User",
     }
     resource_instance = resource_instance_map.get(resource_id[0])
     return resource_instance

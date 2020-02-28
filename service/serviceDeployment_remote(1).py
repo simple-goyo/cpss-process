@@ -1,13 +1,14 @@
 # coding=utf-8
 
 from kubernetes import client, config
+import requests
 
 
 def create_deployment_object(deployment_name, image_name):
     # Configurate Pod template container
     container = client.V1Container(
         name=image_name,
-        image="lizhengjie/hcp-re:" + image_name,
+        image="lizhengjie/hcp-re:"+image_name,
         image_pull_policy="Always",
         ports=[client.V1ContainerPort(container_port=8888)])
     image_pull_secret = client.V1LocalObjectReference(name='regcred')
@@ -31,21 +32,29 @@ def create_deployment_object(deployment_name, image_name):
 
 def create_deployment(api_instance, deployment):
     # Create deployment
-    api_response = api_instance.create_namespaced_deployment(
-        body=deployment,
-        namespace="default")
-    print("Deployment created. status='%s'" % str(api_response.status))
+    try:
+        api_response = api_instance.create_namespaced_deployment(
+            body=deployment,
+            namespace="default")
+        print("Deployment created. status='%s'" % str(api_response.status))
+    except Exception as e:
+        print("error:")
+        print(e)
 
 
 def delete_deployment(api_instance, deployment_name):
     # Delete deployment
-    api_response = api_instance.delete_namespaced_deployment(
-        name=deployment_name,
-        namespace='default',
-        body=client.V1DeleteOptions(
-            propagation_policy='Foreground',
-            grace_period_seconds=5))
-    print("Deployment deleted. status='%s'" % str(api_response.status))
+    try:
+        api_response = api_instance.delete_namespaced_deployment(
+            name=deployment_name,
+            namespace='default',
+            body=client.V1DeleteOptions(
+                propagation_policy='Foreground',
+                grace_period_seconds=5))
+        print("Deployment deleted. status='%s'" % str(api_response.status))
+    except Exception as e:
+        print("error:")
+        print(e)
 
 
 def create_service(api_instance, service_name):
@@ -60,24 +69,34 @@ def create_service(api_instance, service_name):
             type="NodePort",
             selector={"k8s-app": service_name},
             ports=[client.V1ServicePort(
-                port=8888,  # port in k8s node
-                target_port=8888  # port in container
+                port=8888,     # port in k8s node
+                target_port=8888    # port in container
             )]
         )
     )
     # Creation of the Service in specified namespace
-    api_response = api_instance.create_namespaced_service(namespace="default", body=body)
-    print("Service created. status='%s'" % str(api_response.status))
-    # print("Service cluster_ip is '%s'" % str(api_response.spec.cluster_ip))
-    # return cluster-ip
-    return api_response.spec.cluster_ip
+    try:
+        api_response = api_instance.create_namespaced_service(namespace="default", body=body)
+        print("Service created. status='%s'" % str(api_response.status))
+        # print("Service cluster_ip is '%s'" % str(api_response.spec.cluster_ip))
+        # return cluster-ip
+        return api_response.spec.cluster_ip
+    except Exception as e:
+        print("error:")
+        print(e)
+        return "null"
 
 
 def read_service_cluster_ip(api_instance, service_name):
-    api_response = api_instance.read_namespaced_service(name=service_name, namespace='default')
-    # print(api_response)
-    # print("Service cluster_ip is '%s'" % str(api_response.spec.cluster_ip))
-    return api_response.spec.cluster_ip
+    try:
+        api_response = api_instance.read_namespaced_service(name=service_name, namespace='default')
+        # print(api_response)
+        # print("Service cluster_ip is '%s'" % str(api_response.spec.cluster_ip))
+        return api_response.spec.cluster_ip
+    except Exception as e:
+        print("error:")
+        print(e)
+        return "null"
 
 
 def delete_service(api_instance, service_name):
@@ -94,7 +113,8 @@ def delete_service(api_instance, service_name):
         print("error:")
         print(e)
 
-def create_service_main(deployment_name, service_name):
+
+def config_remote_k8s():
     # Define the barer token we are going to use to authenticate.
     # See here to create the token:
     # https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/
@@ -126,23 +146,38 @@ def create_service_main(deployment_name, service_name):
     # Create a ApiClient with our config
     client.Configuration.set_default(configuration)
 
-    # Create a deployment object
-    deployment = create_deployment_object(deployment_name=deployment_name, image_name='workflow-proxy-template')
-    create_deployment(client.AppsV1Api(), deployment)
 
-    # Create a service object, return the service's cluster-ip
-    clusterIP = create_service(client.CoreV1Api(), service_name)
-    print("Service cluster_ip is: " + str(clusterIP))
-    # Or read cluster-ip when needed
-    clusterIP = read_service_cluster_ip(client.CoreV1Api(), service_name)
-    print("Service cluster_ip is: " + str(clusterIP))
+def main(deployment_name, service_name):
+
+    # Create a deployment object
+    # deployment = create_deployment_object(deployment_name=deployment_name, image_name='workflow-proxy-template')
+    # create_deployment(client.AppsV1Api(), deployment)
+    # # Create a service object, return the service's cluster-ip
+    # clusterIP = create_service(client.CoreV1Api(), service_name)
+    # print("Service cluster_ip is: " + str(clusterIP))
+    # # Or read cluster-ip when needed
+    # clusterIP = read_service_cluster_ip(client.CoreV1Api(), service_name)
+    # print("Service cluster_ip is: " + str(clusterIP))
     # access the service on kubernetes nodes via cluster-ip : http://clusterIP:8888/
 
     # Delete created service and deployment
-    # delete_service(client.CoreV1Api(), service_name)
-    # delete_deployment(client.AppsV1Api(), deployment_name)
-    return clusterIP
+    delete_service(client.CoreV1Api(), service_name)
+    delete_deployment(client.AppsV1Api(), deployment_name)
 
 
 if __name__ == '__main__':
-    create_service_main(deployment_name="workflow1-task1", service_name="workflow1-task1")
+    # service_names = ['55643a501f4eae0912a7ef8sid-3f7627c8-62bf-4b04-b41b-14693eee69eb']
+    # for name in service_names:
+    #     main(name, name)
+    # main(deployment_name="workflow1-test", service_name="workflow1-test")
+
+    # delete all service created by Shen Biao
+    config_remote_k8s()
+    service_list = eval(requests.get('http://106.15.102.123:5001/delete_app_instance_service_self').text)
+    print(service_list)
+    for services in service_list:
+        for name in services:
+            delete_service(client.CoreV1Api(), name)
+            delete_deployment(client.AppsV1Api(), name)
+    # print(service_list)
+

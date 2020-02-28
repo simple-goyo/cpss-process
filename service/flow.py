@@ -189,7 +189,6 @@ class Scp_Event_Task(Task):
             if count > 15:
                 b_event = True
             time.sleep(10)
-
         # 更新任务状态
         update_stop_task(self, "2")
         return output
