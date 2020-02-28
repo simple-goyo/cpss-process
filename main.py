@@ -232,9 +232,9 @@ def delete_app_instance_service_self():
     result = []
     for app_instance in app_instances:
         app_instance_id = str(app_instance["_id"])
-        task_id0="sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"
-        task_id1="sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"
-        task_id2="sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2"
+        task_id0 = "sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"
+        task_id1 = "sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"
+        task_id2 = "sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2"
         deployment_and_service_name0 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id0[-4:] + "t").lower()
         deployment_and_service_name1 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id1[-4:] + "t").lower()
         deployment_and_service_name2 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id2[-4:] + "t").lower()
