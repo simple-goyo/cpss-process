@@ -58,6 +58,7 @@ class Scp_Task():
         self.task_id = config.get('task_id')
         self.task_executor = config.get('task_executor')
         self.task_input = config.get('task_input')
+        self.task_output = config.get('task_output')
 
 
 def get_task_url(self):
