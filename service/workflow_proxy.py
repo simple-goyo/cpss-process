@@ -67,10 +67,12 @@ def executetask():
         logging.info("StartNoneEvent is run")
         # 调用后续流程
         call_workflow_proxy()
+        update_stop_task("2")
     elif workflow_proxy_type == "DefaultEvent":
         logging.info("DefaultEvent is run")
         # 调用后续流程
         call_workflow_proxy()
+        update_stop_task("2")
     else:
         logging.info("Task is run")
         # 获取执行对象
@@ -84,6 +86,7 @@ def executetask():
         # 访问对应资源的代理服务 传入参数
         url = 'http://' + executor_resource_instance_id + '-proxy.default:8888/'
         # url = 'http://106.15.102.123:31425'
+        logging.info("request url: " + str(url) + ", request params: " + str(data))
         logging.info("request result: " + requests.post(url, data).text)
         # 等待结果返回
         receive_result(executor_resource_instance_id)
@@ -158,7 +161,10 @@ def get_params():
         else:
             value = get_resource_param_by_resource_id(input_resource_id)
             for index in range(len(input_data) - 2):
-                value = value.get(input_data[index + 2])
+                if isinstance(value, dict):
+                    value = value.get(input_data[index + 2])
+                else:
+                    value = json.loads(value).get(input_data[index + 2])
             params[input_service_param_name] = value
     return params
 

@@ -721,3 +721,411 @@ INFO:2020-02-28 21:43:28,476:blocking_connection.py:_create_connection:Connectio
 INFO:2020-02-28 21:43:28,480:blocking_connection.py:__init__:Created channel=1
 INFO:2020-02-28 21:43:28,671:workflow_proxy.py:receive_result:[*] Waiting for msg, routing_key: 5e58eb2ee4b1c3ae777bd363
 INFO:2020-02-28 21:43:39,299:workflow_proxy.py:callback:[x] Recieved b"{'state': '1', 'data': {'action': '2', 'mode': '3', 'level': '4', 'num': '5'}}"
+INFO:2020-02-29 12:31:27,714:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-29 12:33:33,949:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-29 12:33:33,955:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:33:33] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-29 12:33:36,027:workflow_proxy.py:executetask:Task is run
+ERROR:2020-02-29 12:33:49,555:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 83, in executetask
+    params = get_params()
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 166, in get_params
+    value = json.loads(value).get(input_data[index + 2])
+  File "D:\soft\2019-12-03-python\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+INFO:2020-02-29 12:33:49,631:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:33:49] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-29 12:34:10,574:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-29 12:35:43,958:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-29 12:35:47,558:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-29 12:35:47,561:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:35:47] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-29 12:35:49,118:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-29 12:36:52,172:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+ERROR:2020-02-29 12:36:52,367:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\soft\2019-12-03-python\lib\socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 956, in send
+    self.connect()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000019B46748AC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019B46748AC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    logging.info("request result: " + requests.post(url, data).text)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019B46748AC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+INFO:2020-02-29 12:36:52,853:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:36:52] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-29 12:41:15,728:_internal.py:_log: * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+INFO:2020-02-29 12:41:20,416:workflow_proxy.py:init:parameters are initialized.
+INFO:2020-02-29 12:41:20,419:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:41:20] "POST /init HTTP/1.1" 200 -
+INFO:2020-02-29 12:41:22,062:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-29 12:41:23,872:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+ERROR:2020-02-29 12:41:23,923:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\soft\2019-12-03-python\lib\socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 956, in send
+    self.connect()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002724F7A63C8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002724F7A63C8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    logging.info("request result: " + requests.post(url, data).text)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002724F7A63C8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+INFO:2020-02-29 12:41:23,933:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:41:23] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-29 12:41:29,565:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-29 12:41:38,037:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+ERROR:2020-02-29 12:41:38,113:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\soft\2019-12-03-python\lib\socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 956, in send
+    self.connect()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000027251CDB320>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027251CDB320>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    logging.info("request result: " + requests.post(url, data).text)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027251CDB320>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+INFO:2020-02-29 12:41:38,125:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:41:38] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-29 12:41:40,454:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-29 12:42:07,444:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+ERROR:2020-02-29 12:42:07,516:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\soft\2019-12-03-python\lib\socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 956, in send
+    self.connect()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000027251B60DD8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027251B60DD8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    logging.info("request result: " + requests.post(url, data).text)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027251B60DD8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+INFO:2020-02-29 12:42:07,526:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:42:07] "POST /run HTTP/1.1" 500 -
+INFO:2020-02-29 12:42:52,404:workflow_proxy.py:executetask:Task is run
+INFO:2020-02-29 12:43:03,401:workflow_proxy.py:executetask:workflow engine is calling resource service orderCoffee
+ERROR:2020-02-29 12:43:03,497:app.py:log_exception:Exception on /run [POST]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\soft\2019-12-03-python\lib\socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "D:\soft\2019-12-03-python\lib\http\client.py", line 956, in send
+    self.connect()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000027251DD5A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "D:\soft\2019-12-03-python\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027251DD5A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/service/workflow_proxy.py", line 89, in executetask
+    logging.info("request result: " + requests.post(url, data).text)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 116, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\soft\2019-12-03-python\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='coffeemaker-service-proxy.default', port=8888): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027251DD5A90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+INFO:2020-02-29 12:43:03,511:_internal.py:_log:127.0.0.1 - - [29/Feb/2020 12:43:03] "POST /run HTTP/1.1" 500 -

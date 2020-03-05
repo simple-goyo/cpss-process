@@ -163,8 +163,16 @@ def save_app_instance_self():
     app_class_id = request.values.get("app_class_id")
     user_id = request.values.get("user_id")
     create_time = get_time()
+    app_class = find_app_class_by_id(t_app_class, app_class_id)
+    app_class_child_shapes = app_class.get("childShapes")
+    all_action_count = 0
+    for child_shape in app_class_child_shapes:
+        stencil = child_shape.get("stencil").get("id")
+        if stencil in ["StartNoneEvent", "DefaultEvent", "SocialAction", "PhysicalAction", "CyberAction"]:
+            all_action_count += 1
     app_instance = {"app_class_id": ObjectId(app_class_id), "user_id": user_id, "create_time": create_time,
-                    "action_state": {}, "app_instance_state": "0", "uid": "", "type": "self"}
+                    "action_state": {}, "app_instance_state": "0", "uid": "", "type": "self",
+                    "action_count": all_action_count}
     # 创建应用实例
     app_instance_id = insert_app_instance(t_app_instance, app_instance)
     # 获取执行资源
@@ -184,6 +192,7 @@ def save_app_instance_self():
         else:
             # 对于非执行产生的实例,在初始时进行实例化绑定
             resource_instance_id = get_resource_instance_id_self(user_id, str(app_instance_id), resource_id)
+            print(app_instance_id, "---", resource_id, "---", resource_instance_id)
             # 去获取资源知识图谱接口获取对象信息
             insert_app_instance_resource(t_app_instance, app_instance_id, resource_id[1], resource_instance_id)
             body = get_resource_param()
@@ -201,57 +210,30 @@ def save_app_instance_self():
 # 保存app_instance
 @app.route('/delete_app_instance_service_self', methods={'POST', 'GET'})
 def delete_app_instance_service_self():
-    app_instances = find_all_app_instance(t_app_instance)
-    # with open('token.txt', 'r') as file:
-    #     Token = file.read().strip('\n')
-    #
-    # APISERVER = 'https://139.196.228.210:6443'
-    #
-    # # Create a configuration object
-    # configuration = client.Configuration()
-    #
-    # # Specify the endpoint of your Kube cluster
-    # configuration.host = APISERVER
-    #
-    # # Security part.
-    # # In this simple example we are not going to verify the SSL certificate of
-    # # the remote cluster (for simplicity reason)
-    # configuration.verify_ssl = False
-    #
-    # # Nevertheless if you want to do it you can with these 2 parameters
-    # # configuration.verify_ssl=True
-    # # ssl_ca_cert is the filepath to the file that contains the certificate.
-    # # configuration.ssl_ca_cert="certificate"
-    # configuration.api_key = {"authorization": "Bearer " + Token}
-    #
-    # # configuration.api_key["authorization"] = "bearer " + Token
-    # # configuration.api_key_prefix['authorization'] = 'Bearer'
-    # # configuration.ssl_ca_cert = 'ca.crt'
-    # # Create a ApiClient with our config
-    # client.Configuration.set_default(configuration)
+    app_instance_id = request.values.get("app_instance_id")
+    app_instances = []
+    if app_instance_id is None:
+        app_instances = find_all_app_instance(t_app_instance)
+    else:
+        app_instance = {
+            "_id": app_instance_id
+        }
+        app_instances.append(app_instance)
     result = []
     for app_instance in app_instances:
         app_instance_id = str(app_instance["_id"])
-        task_id0 = "sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"
-        task_id1 = "sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"
-        task_id2 = "sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2"
-        deployment_and_service_name0 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id0[-4:] + "t").lower()
-        deployment_and_service_name1 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id1[-4:] + "t").lower()
-        deployment_and_service_name2 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id2[-4:] + "t").lower()
-        # deployment_and_service_name0 = "s" + str(
-        #     hash(str(app_instance_id + "sid-3F7627C8-62BF-4B04-B41B-14693EEE69EB"))) + "s"
-        # deployment_and_service_name1 = "s" + str(
-        #     hash(str(app_instance_id + "sid-9BEDCB3D-5BBA-4FEA-BA19-A611331C220A"))) + "s"
-        # deployment_and_service_name2 = "s" + str(
-        #     hash(str(app_instance_id + "sid-8B3E7258-1ABF-41FC-8DC2-D89E225910E2"))) + "s"
-        # print("deployment_and_service_name0:" + deployment_and_service_name0)
-        result.append([deployment_and_service_name0, deployment_and_service_name1, deployment_and_service_name2])
-        # delete_service(client.CoreV1Api(), deployment_and_service_name0)
-        # delete_deployment(client.CoreV1Api(), deployment_and_service_name0)
-        # delete_service(client.CoreV1Api(), deployment_and_service_name1)
-        # delete_deployment(client.CoreV1Api(), deployment_and_service_name1)
-        # delete_service(client.CoreV1Api(), deployment_and_service_name2)
-        # delete_deployment(client.CoreV1Api().deployment_and_service_name2)
+        app_class_child_shapes = find_app_class_by_instance_id(t_app_instance, app_instance_id).get("app_class").get(
+            "childShapes")
+        for child_shape in app_class_child_shapes:
+            stencil = child_shape.get("stencil").get("id")
+            if stencil in ["StartNoneEvent", "DefaultEvent", "SocialAction", "PhysicalAction", "CyberAction"]:
+                task_id = child_shape.get("resourceId")
+                deployment_and_service_name0 = ("s" + str(app_instance_id)[-4:] + "s-t" + task_id[-4:] + "t").lower()
+                result.append(deployment_and_service_name0)
+    config_remote_k8s()
+    for services in result:
+        delete_service(client.CoreV1Api(), services)
+        delete_deployment(client.AppsV1Api(), services)
     return jsonify(result)
 
 

@@ -252,18 +252,18 @@ class CommonFlow:
         self.t_app_instance = mongodb.get('t_app_instance')
         self.app_class_child_shapes = find_app_class_by_instance_id(self.t_app_instance, self.instance_id).get(
             "app_class").get("childShapes")
-        self.user_id = find_app_instance_by_id(
-            self.t_app_instance, self.instance_id).get("user_id")
-        self.all_action_count = 0
+        app_instance = find_app_instance_by_id(self.t_app_instance, self.instance_id)
+        self.user_id = app_instance.get("user_id")
+        self.all_action_count = app_instance.get("action_count")
+        self.remain_action_count = self.all_action_count
         self.start_tasks = []
-        self.get_all_action_count()
 
-    def get_all_action_count(self):
-        # 获取流程信息
-        for child_shape in self.app_class_child_shapes:
-            stencil = child_shape.get("stencil").get("id")
-            if stencil in ["StartNoneEvent", "DefaultEvent", "SocialAction", "PhysicalAction", "CyberAction"]:
-                self.all_action_count += 1
+    # def get_all_action_count(self):
+    #     # 获取流程信息
+    #     for child_shape in self.app_class_child_shapes:
+    #         stencil = child_shape.get("stencil").get("id")
+    #         if stencil in ["StartNoneEvent", "DefaultEvent", "SocialAction", "PhysicalAction", "CyberAction"]:
+    #             self.all_action_count += 1
 
     def run_flow(self):
         t = Thread(target=self.new_thread, )
@@ -274,8 +274,16 @@ class CommonFlow:
         # 获取流程信息
         self.get_flow(None)
         # 拼接流程
-        # todo 开始执行
-        action_ips = find_app_instance_action_ip_by_instance_id(self.t_app_instance, self.instance_id).get("action_ip")
+        stop_count = 0
+        action_states = find_app_instance_by_id(self.t_app_instance, str(self.instance_id)).get("action_state")
+        # print(str(self.instance_id)+"-----当前已完成---:" + ""+str(action_states))
+        while len(action_states) != self.all_action_count and stop_count < 20:
+            print("等待所有节点初始化完成,当前已完成:" + str(action_states))
+            stop_count += 1
+            time.sleep(5)
+            action_states = find_app_instance_by_id(self.t_app_instance, str(self.instance_id)).get("action_state")
+        action_ips = find_app_instance_action_ip_by_instance_id(self.t_app_instance, self.instance_id).get(
+            "action_ip")
         print(action_ips)
         for start_task in self.start_tasks:
             start_ip = action_ips.get(start_task.task_id)
@@ -326,9 +334,9 @@ class CommonFlow:
                     self.get_flow(task)
         else:
             # 判断是否所有的节点都已经生成完了，如果都完了就开始执行
-            if self.all_action_count == 0:
+            if self.remain_action_count == 0:
                 return "success"
-            self.all_action_count -= 1
+            self.remain_action_count -= 1
             # 判断当前节点还有没有下一个节点
             child_shape = self.get_child_shape_by_id(pre_task.task_id)
             next_nodes = self.get_next_nodes(child_shape)
@@ -340,15 +348,15 @@ class CommonFlow:
                     self.get_flow(task)
             else:
                 next_workflow_proxy = "null"
+            deployment_and_service_name = "s" + str(pre_task.instance_id)[-4:] + "s-t" + pre_task.task_id[-4:] + "t"
+            deployment_and_service_name = deployment_and_service_name.lower()
+            print("---deployment_and_service_name----" + deployment_and_service_name)
+            clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
+            update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
             if pre_task.task_type == "StartNoneEvent":
                 # deployment_and_service_name = "i-"+str(pre_task.instance_id) + pre_task.task_id+"-t"
                 # deployment_and_service_name = deployment_and_service_name.lower()
                 # deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
-                deployment_and_service_name = "s" + str(pre_task.instance_id)[-4:] + "s-t" + pre_task.task_id[-4:] + "t"
-                deployment_and_service_name = deployment_and_service_name.lower()
-                print("---deployment_and_service_name----" + deployment_and_service_name)
-                clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
-                update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
                 params = {'user_id': self.user_id,
                           'workflow_instance_id': str(self.instance_id),
                           'workflow_proxy_type': 'StartNoneEvent',
@@ -356,21 +364,11 @@ class CommonFlow:
                           'next_workflow_proxy': next_workflow_proxy
                           }
                 print("------params0-------" + str(params))
-                init_address = "http://" + clusterIP + ":8888/init"
-                # init_address = "http://106.15.102.123:31507/init"
-                print("------init_address-------" + init_address)
-                headers = {"Content-Type": "application/x-www-form-urlencoded"}
-                time.sleep(10)  # 等待部署好
-                response = requests.post(init_address, data=params, headers=headers)
-                print("response Code: " + str(response.status_code))
-                print("response content: " + response.text)
+                t1 = Thread(target=self.new_thread_begin_init,
+                            args=(clusterIP, pre_task.task_id, deployment_and_service_name, params))
+                t1.start()
             else:
                 # deployment_and_service_name = str(hash(str(pre_task.instance_id) + pre_task.task_id))
-                deployment_and_service_name = "s" + str(pre_task.instance_id)[-4:] + "s-t" + pre_task.task_id[-4:] + "t"
-                deployment_and_service_name = deployment_and_service_name.lower()
-                print("---deployment_and_service_name----" + deployment_and_service_name)
-                clusterIP = create_service_main(deployment_and_service_name, deployment_and_service_name)
-                update_app_instance_action_ip(self.t_app_instance, self.instance_id, pre_task.task_id, clusterIP)
                 params = {'user_id': self.user_id,
                           'workflow_instance_id': str(self.instance_id),
                           'workflow_proxy_type': pre_task.task_type,
@@ -381,16 +379,43 @@ class CommonFlow:
                           'service_name': pre_task.task_name,
                           'next_workflow_proxy': next_workflow_proxy}
                 print("------params1-------" + str(params))
-                # body = {"payload": "{\"action\":\"start\",\"mode\":\"0\",\"level\":\"0\",\"num\":\"0\"}",
-                #         "topic": "lab/lab401_coffee1/switch"}
-                init_address = "http://" + clusterIP + ":8888/init"
-                # init_address = "http://106.15.102.123:31507/init"
-                print("------init_address-------" + init_address)
-                headers = {"Content-Type": "application/x-www-form-urlencoded"}
-                time.sleep(10)  # 等待部署好
-                response = requests.post(init_address, data=params, headers=headers)
-                print("response Code: " + str(response.status_code))
-                print("response content: " + response.text)
+                t1 = Thread(target=self.new_thread_begin_init,
+                            args=(clusterIP, pre_task.task_id, deployment_and_service_name, params))
+                t1.start()
+
+    def new_thread_begin_init(self, clusterIP, action_id, deployment_and_service_name, params):
+        init_address = "http://" + clusterIP + ":8888/init"
+        # init_address = "http://106.15.102.123:31507/init"
+        print("------init_address-------" + init_address)
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        # time.sleep(10)  # 等待部署好
+        while self.read_deployment_ready_replicas(client.AppsV1Api(),
+                                                  deployment_name=deployment_and_service_name) != 1:
+            print('deployment_not_complete:' + deployment_and_service_name)
+            time.sleep(5)
+        print('deployment_completed')  # 表示服务准备就绪 可以访问
+        response = requests.post(init_address, data=params, headers=headers)
+        print("response Code: " + str(response.status_code))
+        print("response content: " + response.text)
+        self.update_app_instance_action_state(action_id, 0)
+
+    def update_app_instance_action_state(self, action_id, action_state):
+        myquery = {"_id": ObjectId(self.instance_id)}
+        newvalues = {"$set": {"action_state." + action_id: action_state}}
+        self.t_app_instance.update_one(myquery, newvalues)
+
+    def read_deployment_ready_replicas(self, api_instance, deployment_name):
+        # read deployment's ready replicas
+        try:
+            api_response = api_instance.read_namespaced_deployment_status(
+                name=deployment_name,
+                namespace='default',
+                pretty='true')
+            return api_response.status.ready_replicas
+        except Exception as e:
+            print("error:")
+            print(e)
+        return None
 
     def get_child_shape_by_id(self, target_id):
         for child_shape in self.app_class_child_shapes:

@@ -579,3 +579,46 @@ TypeError: can only concatenate str (not "NoneType") to str
 INFO:2020-02-27 11:04:19,461:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 11:04:19] "GET /save_app_instance_self HTTP/1.1" 500 -
 INFO:2020-02-27 11:04:27,614:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
 INFO:2020-02-27 11:11:40,779:_internal.py:_log:127.0.0.1 - - [27/Feb/2020 11:11:40] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-03 10:15:53,122:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-03 10:16:23,135:_internal.py:_log:127.0.0.1 - - [03/Mar/2020 10:16:23] "POST /delete_app_instance_service_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:15:18,473:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+ERROR:2020-03-05 21:16:04,634:app.py:log_exception:Exception on /save_app_instance_self [GET]
+Traceback (most recent call last):
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask_cors\extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\soft\2019-12-03-python\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:/code/fudan/python/cpss-process/main.py", line 166, in save_app_instance_self
+    app_class_child_shapes = find_app_class_by_id(t_app_class, app_class_id).get("app_class").get(
+AttributeError: 'NoneType' object has no attribute 'get'
+INFO:2020-03-05 21:16:05,019:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:16:05] "GET /save_app_instance_self HTTP/1.1" 500 -
+INFO:2020-03-05 21:16:12,705:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:16:43,006:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:17:08,865:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:17:08] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:21:20,761:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:25:51,895:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:27:07,832:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:27:07] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:48:13,107:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:48:34,522:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:48:34] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:50:11,517:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:51:03,308:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:51:03] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:53:12,632:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:53:26,680:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:53:26] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:54:00,499:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:54:34,187:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:54:34] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:56:45,038:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:56:58,059:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:56:58] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:58:37,359:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:58:48,472:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:58:48] "GET /save_app_instance_self HTTP/1.1" 200 -
+INFO:2020-03-05 21:59:16,525:_internal.py:_log: * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+INFO:2020-03-05 21:59:23,832:_internal.py:_log:127.0.0.1 - - [05/Mar/2020 21:59:23] "GET /save_app_instance_self HTTP/1.1" 200 -

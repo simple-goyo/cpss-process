@@ -176,8 +176,7 @@ if __name__ == '__main__':
     service_list = eval(requests.get('http://106.15.102.123:5001/delete_app_instance_service_self').text)
     print(service_list)
     for services in service_list:
-        for name in services:
-            delete_service(client.CoreV1Api(), name)
-            delete_deployment(client.AppsV1Api(), name)
+        delete_service(client.CoreV1Api(), services)
+        delete_deployment(client.AppsV1Api(), services)
     # print(service_list)
 

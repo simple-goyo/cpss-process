@@ -3,6 +3,38 @@
 from kubernetes import client, config
 
 
+def config_remote_k8s():
+    # Define the barer token we are going to use to authenticate.
+    # See here to create the token:
+    # https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/
+    with open('token.txt', 'r') as file:
+        Token = file.read().strip('\n')
+
+    APISERVER = 'https://139.196.228.210:6443'
+
+    # Create a configuration object
+    configuration = client.Configuration()
+
+    # Specify the endpoint of your Kube cluster
+    configuration.host = APISERVER
+
+    # Security part.
+    # In this simple example we are not going to verify the SSL certificate of
+    # the remote cluster (for simplicity reason)
+    configuration.verify_ssl = False
+
+    # Nevertheless if you want to do it you can with these 2 parameters
+    # configuration.verify_ssl=True
+    # ssl_ca_cert is the filepath to the file that contains the certificate.
+    # configuration.ssl_ca_cert="certificate"
+    configuration.api_key = {"authorization": "Bearer " + Token}
+
+    # configuration.api_key["authorization"] = "bearer " + Token
+    # configuration.api_key_prefix['authorization'] = 'Bearer'
+    # configuration.ssl_ca_cert = 'ca.crt'
+    # Create a ApiClient with our config
+    client.Configuration.set_default(configuration)
+
 def create_deployment_object(deployment_name, image_name):
     # Configurate Pod template container
     container = client.V1Container(
@@ -39,13 +71,17 @@ def create_deployment(api_instance, deployment):
 
 def delete_deployment(api_instance, deployment_name):
     # Delete deployment
-    api_response = api_instance.delete_namespaced_deployment(
-        name=deployment_name,
-        namespace='default',
-        body=client.V1DeleteOptions(
-            propagation_policy='Foreground',
-            grace_period_seconds=5))
-    print("Deployment deleted. status='%s'" % str(api_response.status))
+    try:
+        api_response = api_instance.delete_namespaced_deployment(
+            name=deployment_name,
+            namespace='default',
+            body=client.V1DeleteOptions(
+                propagation_policy='Foreground',
+                grace_period_seconds=5))
+        print("Deployment deleted. status='%s'" % str(api_response.status))
+    except Exception as e:
+        print("error:")
+        print(e)
 
 
 def create_service(api_instance, service_name):
